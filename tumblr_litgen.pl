@@ -10,7 +10,31 @@ open (my $OF, ">", "tumblr_out.txt") or die "Could not open output $!\n";
 # to do here - learn BibTeX::Parser to get the goods out of the bibtex
 # file; also figure out if unicode or utf8 is the way to go.
 
+my $parser = BibTeX::Parser->new($IF);
 
+while (my $entry = $parser->next) {
+	if ($entry->parse_ok) {
+		my $type    = $entry->type;
+		my $title   = $entry->field("title");
+		my $journal = $entry->field("journal");
+		my @authors = $entry->author;
+		
+		print "\n";
+		print $type . "\n";
+		print $title . "\n";
+		foreach my $author (@authors) {
+			print "First " . $author->first . " "
+			    . "last " . $author->last . " "
+		         . "\n";
+		     print "Type is $type\n";
+		     print "Journal is $journal\n";
+		
+		}
+	} else {
+		warn "Error parsing file: " . $entry->error;
+	}
+
+}
 
 # Generating the HTML in the manner below
 # appears to work fine. (2015-05-05)

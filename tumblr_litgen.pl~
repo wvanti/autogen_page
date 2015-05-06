@@ -7,6 +7,34 @@ use BibTeX::Parser;
 open (my $IF, "<", "bibtex_test_utf8.txt") or die "Could not open input $!\n";
 open (my $OF, ">", "tumblr_out.txt") or die "Could not open output $!\n";
 
+# to do here - learn BibTeX::Parser to get the goods out of the bibtex
+# file; also figure out if unicode or utf8 is the way to go.
+
+my $parser = BibTeX::Parser->new($IF);
+
+while (my $entry = $parser->next) {
+	if ($entry->parse_ok) {
+		my $type    = $entry->type;
+		my $title   = $entry->field("title");
+		my @authors = $entry->author;
+		
+		print "\n";
+		print $type . "\n";
+		print $title . "\n";
+		foreach my $author (@authors) {
+			print "First " . $author->first . " "
+			    . "last " . $author->last . " "
+		         . "\n";
+		
+		}
+	} else {
+		warn "Error parsing file: " . $entry->error;
+	}
+
+}
+
+# Generating the HTML in the manner below
+# appears to work fine. (2015-05-05)
 my $placeholder = "placeholder";
 
 print $OF "<p>Check out some recently published articles by folks at Columbia University:</p>\n";
