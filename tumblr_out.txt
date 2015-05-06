@@ -1,0 +1,49 @@
+<p>Check out some recently published articles by folks at Columbia University:</p>
+[[MORE]]
+<ul>
+<li>
+Authors, A.
+<br/>
+<a href="dx.doi.org/placeholder" target="_new">
+Title.
+</a>
+<br/>
+Journal, Volume, Pages.
+</li>
+<li>
+Authors, A.
+<br/>
+<a href="dx.doi.org/" target="_new">
+Title.
+</a>
+<br/>
+Journal, Volume, Pages.
+</li>
+<li>
+Authors, A.
+<br/>
+<a href="dx.doi.org/" target="_new">
+Title.
+</a>
+<br/>
+Journal, Volume, Pages.
+</li>
+<li>
+Authors, A.
+<br/>
+<a href="dx.doi.org/" target="_new">
+Title.
+</a>
+<br/>
+Journal, Volume, Pages.
+</li>
+<li>
+Authors, A.
+<br/>
+<a href="dx.doi.org/" target="_new">
+Title.
+</a>
+<br/>
+Journal, Volume, Pages.
+</li>
+</ul>
