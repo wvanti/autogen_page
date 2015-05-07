@@ -17,19 +17,23 @@ while (my $entry = $parser->next) {
 		my $type    = $entry->type;
 		my $title   = $entry->field("title");
 		my $journal = $entry->field("journal");
+		my $doi     = $entry->field("doi");
+		my $volume  = $entry->field("volume");
+		my $number  = $entry->field("number");
 		my @authors = $entry->author;
 		
 		print "\n";
 		print $type . "\n";
 		print $title . "\n";
+		print $journal . ", " . $volume . "(" . $number . ")\n";
+		# need check for missing values for volume and number
+		# as well as pages if you implement that
+		print "http://dx.doi.org/" . $doi . "\n";
 		foreach my $author (@authors) {
-			print "First " . $author->first . " "
-			    . "last " . $author->last . " "
-		         . "\n";
-		     print "Type is $type\n";
-		     print "Journal is $journal\n";
-		
+			print $author->first . " " . $author->last . ", ";
+			# put in a thing to check if it's the last item, to remove comma
 		}
+		print "\n";
 	} else {
 		warn "Error parsing file: " . $entry->error;
 	}
