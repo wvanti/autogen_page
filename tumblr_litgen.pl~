@@ -16,6 +16,7 @@ while (my $entry = $parser->next) {
 	if ($entry->parse_ok) {
 		my $type    = $entry->type;
 		my $title   = $entry->field("title");
+		my $journal = $entry->field("journal");
 		my @authors = $entry->author;
 		
 		print "\n";
@@ -25,6 +26,8 @@ while (my $entry = $parser->next) {
 			print "First " . $author->first . " "
 			    . "last " . $author->last . " "
 		         . "\n";
+		     print "Type is $type\n";
+		     print "Journal is $journal\n";
 		
 		}
 	} else {

@@ -7,9 +7,6 @@ use BibTeX::Parser;
 open (my $IF, "<", "bibtex_test_utf8.txt") or die "Could not open input $!\n";
 open (my $OF, ">", "tumblr_out.txt") or die "Could not open output $!\n";
 
-# to do here - learn BibTeX::Parser to get the goods out of the bibtex
-# file; also figure out if unicode or utf8 is the way to go.
-
 my $parser = BibTeX::Parser->new($IF);
 
 while (my $entry = $parser->next) {
