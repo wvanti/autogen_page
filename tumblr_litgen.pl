@@ -5,9 +5,11 @@ use warnings;
 use BibTeX::Parser;
 
 open (my $IF, "<", "bibtex_test_utf8.txt") or die "Could not open input $!\n";
-open (my $OF, ">", "tumblr_out.txt") or die "Could not open output $!\n";
+open (my $OF, ">", "tumblr_out2.txt") or die "Could not open output $!\n";
 
 my $parser = BibTeX::Parser->new($IF);
+
+createBeginning();	# starts the file, stops just before needing authors
 
 while (my $entry = $parser->next) {
 	if ($entry->parse_ok) {
@@ -19,7 +21,7 @@ while (my $entry = $parser->next) {
 		my $number  = $entry->field("number");
 		my @authors = $entry->author;
 		
-		print "\n";
+		
 		print $type . "\n";
 		print $title . "\n";
 		print $journal . ", " . $volume . "(" . $number . ")\n";
@@ -41,10 +43,17 @@ while (my $entry = $parser->next) {
 # appears to work fine. (2015-05-05)
 my $placeholder = "placeholder";
 
-print $OF "<p>Check out some recently published articles by folks at Columbia University:</p>\n";
-print $OF "[[MORE]]\n";
-print $OF "<ul>\n";
-print $OF "<li>\n";
+sub createBeginning {
+	print $OF "<p>Check out some recently published articles by folks at Columbia University:</p>\n";
+	print $OF "[[MORE]]\n";
+	print $OF "<ul>\n";
+	print $OF "<li>\n";
+}
+
+#print $OF "<p>Check out some recently published articles by folks at Columbia University:</p>\n";
+#print $OF "[[MORE]]\n";
+#print $OF "<ul>\n";
+#print $OF "<li>\n";
 print $OF "Authors, A.\n";
 print $OF "<br/>\n";
 print $OF "<a href=\"dx.doi.org/$placeholder\" ";
