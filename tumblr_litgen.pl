@@ -11,10 +11,8 @@ open (my $TF, ">", "testfile.txt") or die "Nope $!";
 
 my $parser = BibTeX::Parser->new($IF);
 
-# createBeginning();	# starts the file, stops just before needing authors
-
 # change this to the number of articles exported (usually 5)
-my $numArticles = 3;
+my $numArticles = 5;
 
 print $TF "<p>Check out some recently published articles by folks at 
 Columbia University:</p>\n";
@@ -56,16 +54,6 @@ while (my $entry = $parser->next) {
 			# I'll just add a final comma and chop it afterwards
 		}
 		$counter++;
-		# print $type . "\n";
-		# print $title . "\n";
-		# print $journal . ", " . $volume . "(" . $number . ")\n";
-		# need check for missing values for volume and number
-		# as well as pages if you implement that
-		# print "http://dx.doi.org/" . $doi . "\n";
-		# foreach my $author (@authors) {
-			# print $author->first . " " . $author->last . ", ";
-			# put in a thing to check if it's the last item, to remove comma
-		# }
 		print "\n";
 	} else {
 		warn "Error parsing file: " . $entry->error;
@@ -88,79 +76,7 @@ while ($counter < $numArticles){
 	print $TF "<br/>\n";
 	print $TF $journal[$counter] . " " . $volume[$counter] . 
 			$number[$counter] . " " . $pages[$counter] . "\n";
-	# skip pages?  since they're just tumblr links, does it really
-	# matter if the citation format isn't spot on?
-	# print $TF $pages[$counter] . "\n";
-	# print $TF $year[$counter] . "\n";
-	# print $TF $doi[$counter] . "\n\n";
 	print $TF "</li>\n";
 	$counter++;
 }
 print $TF "</ul>";
-
-
-# Generating the HTML in the manner below
-# appears to work fine. (2015-05-05)
-my $placeholder = "placeholder";
-
-#sub createBeginning {
-#	print $OF "<p>Check out some recently published articles by folks at Columbia University:</p>\n";
-#	print $OF "[[MORE]]\n";
-#	print $OF "<ul>\n";
-#	print $OF "<li>\n";
-#}
-
-#print $OF "<p>Check out some recently published articles by folks at Columbia University:</p>\n";
-#print $OF "[[MORE]]\n";
-#print $OF "<ul>\n";
-#print $OF "<li>\n";
-print $OF "Authors, A.\n";
-print $OF "<br/>\n";
-print $OF "<a href=\"dx.doi.org/$placeholder\" ";
-print $OF "target=\"_new\">\n";
-print $OF "Title.\n";
-print $OF "</a>\n";
-print $OF "<br/>\n";
-print $OF "Journal, Volume, Pages.\n";
-print $OF "</li>\n";
-print $OF "<li>\n";
-print $OF "Authors, A.\n";
-print $OF "<br/>\n";
-print $OF "<a href=\"dx.doi.org/\" ";
-print $OF "target=\"_new\">\n";
-print $OF "Title.\n";
-print $OF "</a>\n";
-print $OF "<br/>\n";
-print $OF "Journal, Volume, Pages.\n";
-print $OF "</li>\n";
-print $OF "<li>\n";
-print $OF "Authors, A.\n";
-print $OF "<br/>\n";
-print $OF "<a href=\"dx.doi.org/\" ";
-print $OF "target=\"_new\">\n";
-print $OF "Title.\n";
-print $OF "</a>\n";
-print $OF "<br/>\n";
-print $OF "Journal, Volume, Pages.\n";
-print $OF "</li>\n";
-print $OF "<li>\n";
-print $OF "Authors, A.\n";
-print $OF "<br/>\n";
-print $OF "<a href=\"dx.doi.org/\" ";
-print $OF "target=\"_new\">\n";
-print $OF "Title.\n";
-print $OF "</a>\n";
-print $OF "<br/>\n";
-print $OF "Journal, Volume, Pages.\n";
-print $OF "</li>\n";
-print $OF "<li>\n";
-print $OF "Authors, A.\n";
-print $OF "<br/>\n";
-print $OF "<a href=\"dx.doi.org/\" ";
-print $OF "target=\"_new\">\n";
-print $OF "Title.\n";
-print $OF "</a>\n";
-print $OF "<br/>\n";
-print $OF "Journal, Volume, Pages.\n";
-print $OF "</li>\n";
-print $OF "</ul>\n";
