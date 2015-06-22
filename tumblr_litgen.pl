@@ -5,9 +5,8 @@ use warnings;
 no warnings 'uninitialized';
 use BibTeX::Parser;
 
-open (my $IF, "<", "bibtex_test_utf8.txt") or die "Could not open input $!\n";
-open (my $OF, ">", "tumblr_out2.txt") or die "Could not open output $!\n";
-open (my $TF, ">", "testfile.txt") or die "Nope $!";
+open (my $IF, "<", "b0003.txt") or die "Could not open input $!\n";
+open (my $TF, ">", "b0003out.txt") or die "Nope $!";
 
 my $parser = BibTeX::Parser->new($IF);
 
@@ -54,7 +53,7 @@ while (my $entry = $parser->next) {
 			# I'll just add a final comma and chop it afterwards
 		}
 		$counter++;
-		print "\n";
+		# print "\n";
 	} else {
 		warn "Error parsing file: " . $entry->error;
 	}
