@@ -5,8 +5,8 @@ use warnings;
 no warnings 'uninitialized';
 use BibTeX::Parser;
 
-open (my $IF, "<", "b0003.txt") or die "Could not open input $!\n";
-open (my $TF, ">", "b0003out.txt") or die "Nope $!";
+open (my $IF, "<", "/media/001B-9622/b0010.bib") or die "Could not open input $!\n";
+open (my $TF, ">", "/media/001B-9622/b0010out.txt") or die "Nope $!";
 
 my $parser = BibTeX::Parser->new($IF);
 
