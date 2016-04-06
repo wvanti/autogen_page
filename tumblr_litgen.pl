@@ -68,7 +68,7 @@ while ($counter < $numArticles){
 	print $TF $authorList[$counter];
 	print $TF " ($year[$counter])\n";
 	print $TF "<br/>\n";
-	print $TF "<a href=\"dx.doi.org/$doi[$counter]\" ";
+	print $TF "<a href=\"https://doi.org/$doi[$counter]\" ";
 	print $TF "target=\"_new\">\n";
 	print $TF "$title[$counter]\n";
 	print $TF "</a>\n";
