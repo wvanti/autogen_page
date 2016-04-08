@@ -4,7 +4,7 @@
 <li>
 Authors, A.
 <br/>
-<a href="dx.doi.org/placeholder" target="_new">
+<a href="https://doi.org/placeholder" target="_new">
 Title.
 </a>
 <br/>
@@ -13,7 +13,7 @@ Journal, Volume, Pages.
 <li>
 Authors, A.
 <br/>
-<a href="dx.doi.org/" target="_new">
+<a href="https://doi.org/" target="_new">
 Title.
 </a>
 <br/>
@@ -22,7 +22,7 @@ Journal, Volume, Pages.
 <li>
 Authors, A.
 <br/>
-<a href="dx.doi.org/" target="_new">
+<a href="https://doi.org/" target="_new">
 Title.
 </a>
 <br/>
@@ -31,7 +31,7 @@ Journal, Volume, Pages.
 <li>
 Authors, A.
 <br/>
-<a href="dx.doi.org/" target="_new">
+<a href="https://doi.org/" target="_new">
 Title.
 </a>
 <br/>
@@ -40,7 +40,7 @@ Journal, Volume, Pages.
 <li>
 Authors, A.
 <br/>
-<a href="dx.doi.org/" target="_new">
+<a href="https://doi.org/" target="_new">
 Title.
 </a>
 <br/>
