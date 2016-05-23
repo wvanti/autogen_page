@@ -16,6 +16,7 @@ my $numArticles = 5;
 print $TF "<p>Check out some recently published articles by folks at 
 Columbia University:</p>\n";
 print $TF "[[MORE]]\n";
+print $TF "<ul>\n";
 
 my $counter = 0;
 my @title;
@@ -61,7 +62,6 @@ while (my $entry = $parser->next) {
 
 $counter = 0;
 while ($counter < $numArticles){
-	print $TF "<ul>\n";
 	print $TF "<li>\n";
 	chop ($authorList[$counter]);     # this is to eliminate trailing space
 	chop ($authorList[$counter]);	    # this is to eliminate trailing comma
